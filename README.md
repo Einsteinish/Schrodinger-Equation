@@ -2,6 +2,8 @@
 
 The **particle in a box** is a fundamental model (also known as the **infinite potential well**) in quantum mechanics that describes a particle confined to move within a one-dimensional region with impenetrable walls. It illustrates key quantum concepts such as **quantization** of energy levels, wave-particle **duality**, and the **probabilistic** nature of quantum systems, as the particle's wavefunction and energy are determined by boundary conditions and quantum numbers.  
 
+---
+
 ## Solving 1-D Schrödinger Equation    
 
 ![Visualization](images/particle_in_a_box_visualization.png)
@@ -386,6 +388,7 @@ Animaion output file is available for download: [View `particle_in_a_box_animati
 Animaion gif output file is available for download: [View `particle_in_a_box_animation.gif`](media/particle_in_a_box_animation.gif).  
 
 **(Note)**  
+- The animation code needs FFmpeg installed: `brew install ffmpeg` to create an MP4. If you don't want the file, just comment out the line `ani.save()` in the Python code.
 - The following values are used:  
 $L = 1.0$  # Length of the box  
 $n_{max} = 5$  # Maximum quantum number for the visualization  
@@ -394,7 +397,7 @@ $m = 9.10938356 \times 10^{-31}$  # Mass of the electron (in $kg$)
 
 ![particle_in_a_box_animation.gif](media/particle_in_a_box_animation.gif)
 
-
+---
  
 ## Full (Time-Dependent) Wavefunction Separation into Real and Imaginary Parts for the Particle in a Box
 
@@ -461,6 +464,7 @@ $$
 
 This separation into real and imaginary parts is useful for visualizing the wavefunction's behavior over time and understanding its oscillatory nature.
 
+
 ### Visualization & Animation  
 Visualization is a great way to understand the wavefunction and its properties. Let’s visualize the **wavefunction** $\Psi_n(x,t)$. We’ll use **Python** and the **matplotlib** library to create plots.  
 
@@ -469,3 +473,33 @@ Animaion output file is available for download: [View `full_wavefunction_animati
 Animaion gif output file is available for download: [View `full_wavefunction_animation.gif`](media/full_wavefunction_animation.gif).  
 - A GIF file can be created from an existing MP4 file using the following command: `ffmpeg -i full_wavefunction_animation.mp4 -vf "fps=10,scale=960:-1:flags=lanczos" full_wavefunction_animation.gif`
 ![full_wavefunction_animation.gif](media/full_wavefunction_animation.gif)
+
+---
+## Physical Meaning of Real and Imaginary Parts of the Full Wavefunction
+
+### a) Probability Amplitude
+The wavefunction $\Psi(x,t)$ itself is a **probability amplitude**. Its square magnitude $|\Psi(x,t)|^2$ gives the probability density of finding the particle at position $x$ at time $t$:
+
+$$ 
+|\Psi(x,t)|^2 = \Psi^*(x,t) \cdot \Psi(x,t),
+$$ 
+
+where $\Psi^*(x,t)$ is the complex conjugate of $\Psi(x,t)$. For a real wavefunction (e.g., in the particle in a box), this simplifies to:
+
+$$ 
+|\Psi(x,t)|^2 = (\text{Re}(\Psi(x,t)))^2 + (\text{Im}(\Psi(x,t)))^2.
+$$ 
+
+### b) Oscillatory Behavior
+- The **real part** $\text{Re}(\Psi(x,t))$ oscillates as a **cosine function**.
+- The **imaginary part** $\text{Im}(\Psi(x,t))$ oscillates as a **sine function**.
+
+These oscillations represent the time evolution of the wavefunction. The real and imaginary parts are **90 degrees out of phase** with each other, meaning when one is at a maximum, the other is at zero.
+
+### c) Phase Information
+The real and imaginary parts together encode the **phase** of the wavefunction. The phase is crucial for understanding interference and superposition effects in quantum mechanics. For example:
+- In a **double-slit experiment**, the phase difference between two wavefunctions determines the interference pattern.
+- The phase also plays a role in **quantum tunneling** and **coherence**.
+
+### d) Quantum Superposition
+The real and imaginary parts allow the wavefunction to represent **superpositions of states**. For example, a particle can be in a superposition of two energy states, and the real and imaginary parts describe how these states evolve over time.
