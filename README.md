@@ -503,3 +503,10 @@ The real and imaginary parts together encode the **phase** of the wavefunction. 
 
 ### d) Quantum Superposition
 The real and imaginary parts allow the wavefunction to represent **superpositions of states**. For example, a particle can be in a superposition of two energy states, and the real and imaginary parts describe how these states evolve over time.
+
+
+---
+
+[Watch the Youtube video here](https://youtu.be/3ZAjVQs0V5c)
+
+[![YouTube Video Thumbnail](https://img.youtube.com/vi/3ZAjVQs0V5c/0.jpg)](https://www.youtube.com/watch?v=3ZAjVQs0V5c)
